@@ -1,6 +1,6 @@
 {
   "name": "TwitchSearch",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Search engine for Twitch streams.",
   "dependencies": {
     "body-parser": "^1.12.3",
