@@ -58,3 +58,6 @@ target/
 
 ## Config file
 config.ini
+
+## PyCharm
+.idea/
