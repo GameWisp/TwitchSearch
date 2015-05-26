@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - twitch search@localhost" uuid="75c62cde-0e37-43d9-8714-2455a1cb194b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>twitchsearch</user-name>
+      <schema-pattern>twitch&amp;nbsp;search.*</schema-pattern>
+      <default-schemas>twitch&amp;nbsp;search.*</default-schemas>
+    </data-source>
+  </component>
+</project>

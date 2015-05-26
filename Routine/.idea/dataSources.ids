@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - twitch search@localhost" uuid="75c62cde-0e37-43d9-8714-2455a1cb194b">
+    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="twitch search"/>
+    <table name="language" schema="" catalog="twitch search" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Language" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Code" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FKStream81470" table="stream" schema="" catalog="twitch search" columns="LanguageID"/>
+      <index name="Code" unique="true" columns="Code"/>
+      <index name="Language" unique="true" columns="Language"/>
+    </table>
+    <table name="routine" schema="" catalog="twitch search" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="SessionID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Valid_entries" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Errors" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID,SessionID"/>
+      <foreign-key name="FKRoutine779991" columns="SessionID" ref-table="session" ref-schema="" ref-catalog="twitch search" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="FKRoutine779991" unique="false" columns="SessionID"/>
+    </table>
+    <table name="session" schema="" catalog="twitch search" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Start_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="End_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="Log_file" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FKRoutine779991" table="routine" schema="" catalog="twitch search" columns="SessionID"/>
+    </table>
+    <table name="stream" schema="" catalog="twitch search" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Game" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Viewers" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" remarks="dXB0aW1lIG9mIHRoZSBzdHJlYW0="/>
+      <column name="Average_FPS" sqlType="FLOAT" precision="12" scale="0" nullable="false" jdbcType="7"/>
+      <column name="Preview" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Display_name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Logo" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="isMature" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="Status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="isPartner" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="URL" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Channel_created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="Followers" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="Views" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="LanguageID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FKStream81470" columns="LanguageID" ref-table="language" ref-schema="" ref-catalog="twitch search" ref-columns="ID" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="FKStream81470" unique="false" columns="LanguageID"/>
+    </table>
+    <table name="teste" schema="" catalog="twitch search" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+  </data-source>
+</component>

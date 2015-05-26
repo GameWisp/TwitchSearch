@@ -1,0 +1,9 @@
+- CSS: make everything look nice
+
+- Fix:
+    - Link not working properly in Firefox
+    - Routine doesn't create logs folder
+
+- Ideas:
+    - Save search with a label for quick re-use (use html5 storage?)
+    - Use the table headers as buttons for search with the respective order by
